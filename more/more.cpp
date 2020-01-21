@@ -8,7 +8,6 @@ int f[N][N][N];
 int main() {
     // freopen("more.in", "r", stdin);
     // freopen("more.out", "w", stdout);
-    memset(f, 0, sizeof(f));
     int x, y, z;
     cin >> x >> y >> z;
     for (int i = 0; i <= x; i ++) {

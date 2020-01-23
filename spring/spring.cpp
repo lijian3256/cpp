@@ -1,21 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
-int a[100005];
 int result = 0;
-void spring(int sum) {
+int n = 0;
+int a[100001];
+void Spring(int pos) {
     result ++;
-    
-}
-int main(int argc, char const *argv[])
-{
-    memset(a, 0, sizeof(a));
-    freopen("spring.in", "r", stdin);
-    freopen("spring.out", "w", stdout);
-    scanf("%d", &argc);
-    for (int i = 1; i <= argc; i ++) {
-        cin >> a[i];
+    if (pos + a[pos] > n - 1) {
+        return;
+    } else {
+        Spring(pos + a[pos]);
     }
-    spring(0);
-    printf("%d\n", result);
+}
+int main(int argc, char const *argv[]) {
+    memset(a, 0, sizeof(a));
+    scanf("%d", &n);
+    
+    for (int i = 0; i < n; i ++) {
+        scanf("%d", &a[i]);
+    }
+    Spring(0);
+    printf("%d", result);
+    system("pause");
     return 0;
 }
